@@ -2,7 +2,11 @@ import mongoose from "mongoose";
 
 const membershipSchema = new mongoose.Schema({
   id: { type: Number, required: true, unique: true },
-  member_id: { type: Number, required: true },
+  member_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Members",
+    required: true
+  },
   plan_id: { type: Number, required: true },
   assigned_trainer_id: { type: Number, default: null },
   start_date: { type: Date, required: true },

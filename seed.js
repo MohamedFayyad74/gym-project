@@ -134,7 +134,7 @@ const seedDatabase = async () => {
     const memberships = await Membership.insertMany([
       {
         id: 1,
-        member_id: 1,
+        member_id: members[0]._id,
         plan_id: 2,
         assigned_trainer_id: 1,
         start_date: new Date(),
@@ -144,7 +144,7 @@ const seedDatabase = async () => {
       },
       {
         id: 2,
-        member_id: 2,
+        member_id: members[1]._id,
         plan_id: 1,
         assigned_trainer_id: 2,
         start_date: new Date(),
@@ -154,7 +154,7 @@ const seedDatabase = async () => {
       },
       {
         id: 3,
-        member_id: 3,
+        member_id: members[2]._id,
         plan_id: 3,
         assigned_trainer_id: null,
         start_date: new Date(Date.now() - 90 * 24 * 60 * 60 * 1000),
