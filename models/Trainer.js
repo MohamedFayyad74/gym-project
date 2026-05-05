@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const trainerSchema = new mongoose.Schema({
-  id: { type: Number, required: true, unique: true },
   full_name: { type: String, required: true },
   phone_number: { type: String, required: true },
   schedule_json: { type: mongoose.Schema.Types.Mixed, required: true },

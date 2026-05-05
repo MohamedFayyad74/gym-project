@@ -26,7 +26,6 @@ const seedDatabase = async () => {
     // Seed Admins
     const admins = await Admin.insertMany([
       {
-        id: 1,
         email: "admin@gym.com",
         password_hash: "hashed_password_123",
         full_name: "Ahmed Admin",
@@ -34,7 +33,6 @@ const seedDatabase = async () => {
         created_at: new Date()
       },
       {
-        id: 2,
         email: "admin2@gym.com",
         password_hash: "hashed_password_456",
         full_name: "Fatima Admin",
@@ -46,19 +44,16 @@ const seedDatabase = async () => {
     // Seed Plans
     const plans = await Plan.insertMany([
       {
-        id: 1,
         plan_name: "Basic Plan",
         duration_days: 30,
         price: mongoose.Types.Decimal128.fromString("300")
       },
       {
-        id: 2,
         plan_name: "Premium Plan",
         duration_days: 30,
         price: mongoose.Types.Decimal128.fromString("500")
       },
       {
-        id: 3,
         plan_name: "Pro Plan",
         duration_days: 90,
         price: mongoose.Types.Decimal128.fromString("1200")
@@ -69,7 +64,6 @@ const seedDatabase = async () => {
     // Seed Trainers
     const trainers = await Trainer.insertMany([
       {
-        id: 1,
         full_name: "محمود الفتاح",
         phone_number: "0123456789",
         schedule_json: {
@@ -81,7 +75,6 @@ const seedDatabase = async () => {
         created_at: new Date()
       },
       {
-        id: 2,
         full_name: "أسماء محمد",
         phone_number: "0987654321",
         schedule_json: {
@@ -98,7 +91,6 @@ const seedDatabase = async () => {
     // Seed Members
     const members = await Member.insertMany([
       {
-        id: 1,
         full_name: "علي محمد",
         phone_number: "0111222333",
         age: 25,
@@ -108,7 +100,6 @@ const seedDatabase = async () => {
         qr_code_id: "QR_001"
       },
       {
-        id: 2,
         full_name: "نور السيد",
         phone_number: "0222333444",
         age: 22,
@@ -118,7 +109,6 @@ const seedDatabase = async () => {
         qr_code_id: "QR_002"
       },
       {
-        id: 3,
         full_name: "خالد أحمد",
         phone_number: "0333444555",
         age: 30,
@@ -133,7 +123,6 @@ const seedDatabase = async () => {
     // Seed Memberships
     const memberships = await Membership.insertMany([
       {
-        id: 1,
         member_id: members[0]._id,
         plan_id: 2,
         assigned_trainer_id: 1,
@@ -143,7 +132,6 @@ const seedDatabase = async () => {
         created_at: new Date()
       },
       {
-        id: 2,
         member_id: members[1]._id,
         plan_id: 1,
         assigned_trainer_id: 2,
@@ -153,7 +141,6 @@ const seedDatabase = async () => {
         created_at: new Date()
       },
       {
-        id: 3,
         member_id: members[2]._id,
         plan_id: 3,
         assigned_trainer_id: null,
@@ -168,21 +155,18 @@ const seedDatabase = async () => {
     // Seed Attendance
     const attendance = await Attendance.insertMany([
       {
-        id: 1,
         member_id: 1,
         check_in_time: new Date(),
         check_out_time: new Date(Date.now() + 60 * 60 * 1000),
         method: "QR"
       },
       {
-        id: 2,
         member_id: 2,
         check_in_time: new Date(Date.now() - 2 * 60 * 60 * 1000),
         check_out_time: new Date(Date.now() - 60 * 60 * 1000),
         method: "Manual"
       },
       {
-        id: 3,
         member_id: 1,
         check_in_time: new Date(Date.now() - 24 * 60 * 60 * 1000),
         check_out_time: new Date(Date.now() - 23 * 60 * 60 * 1000),

@@ -1,8 +1,11 @@
 import mongoose from "mongoose";
 
 const attendanceSchema = new mongoose.Schema({
-  id: { type: Number, required: true, unique: true },
-  member_id: { type: Number, required: true },
+  member_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Members",
+    required: true
+  },
   check_in_time: { type: Date, required: true },
   check_out_time: { type: Date },
   method: {
